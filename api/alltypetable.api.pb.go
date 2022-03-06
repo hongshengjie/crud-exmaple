@@ -27,69 +27,69 @@ type AllTypeTable struct {
 	unknownFields protoimpl.UnknownFields
 
 	//自增id
-	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id"` // @gotags: json:"id"
 	//小整型
-	TInt int64 `protobuf:"varint,2,opt,name=t_int,json=tInt,proto3" json:"t_int,omitempty"`
+	TInt int64 `protobuf:"varint,2,opt,name=t_int,json=tInt,proto3" json:"t_int"` // @gotags: json:"t_int"
 	//
-	SInt int64 `protobuf:"varint,3,opt,name=s_int,json=sInt,proto3" json:"s_int,omitempty"`
+	SInt int64 `protobuf:"varint,3,opt,name=s_int,json=sInt,proto3" json:"s_int"` // @gotags: json:"s_int"
 	//中整数
-	MInt int64 `protobuf:"varint,4,opt,name=m_int,json=mInt,proto3" json:"m_int,omitempty"`
+	MInt int64 `protobuf:"varint,4,opt,name=m_int,json=mInt,proto3" json:"m_int"` // @gotags: json:"m_int"
 	//
-	BInt int64 `protobuf:"varint,5,opt,name=b_int,json=bInt,proto3" json:"b_int,omitempty"`
+	BInt int64 `protobuf:"varint,5,opt,name=b_int,json=bInt,proto3" json:"b_int"` // @gotags: json:"b_int"
 	//
-	F32 float32 `protobuf:"fixed32,6,opt,name=f32,proto3" json:"f32,omitempty"`
+	F32 float32 `protobuf:"fixed32,6,opt,name=f32,proto3" json:"f32"` // @gotags: json:"f32"
 	//
-	F64 float64 `protobuf:"fixed64,7,opt,name=f64,proto3" json:"f64,omitempty"`
+	F64 float64 `protobuf:"fixed64,7,opt,name=f64,proto3" json:"f64"` // @gotags: json:"f64"
 	//
-	DecimalMysql float64 `protobuf:"fixed64,8,opt,name=decimal_mysql,json=decimalMysql,proto3" json:"decimal_mysql,omitempty"`
+	DecimalMysql float64 `protobuf:"fixed64,8,opt,name=decimal_mysql,json=decimalMysql,proto3" json:"decimal_mysql"` // @gotags: json:"decimal_mysql"
 	//
-	CharM string `protobuf:"bytes,9,opt,name=char_m,json=charM,proto3" json:"char_m,omitempty"`
+	CharM string `protobuf:"bytes,9,opt,name=char_m,json=charM,proto3" json:"char_m"` // @gotags: json:"char_m"
 	//
-	VarcharM string `protobuf:"bytes,10,opt,name=varchar_m,json=varcharM,proto3" json:"varchar_m,omitempty"`
+	VarcharM string `protobuf:"bytes,10,opt,name=varchar_m,json=varcharM,proto3" json:"varchar_m"` // @gotags: json:"varchar_m"
 	//
-	JsonM string `protobuf:"bytes,11,opt,name=json_m,json=jsonM,proto3" json:"json_m,omitempty"`
+	JsonM string `protobuf:"bytes,11,opt,name=json_m,json=jsonM,proto3" json:"json_m"` // @gotags: json:"json_m"
 	//
-	NvarcharM string `protobuf:"bytes,12,opt,name=nvarchar_m,json=nvarcharM,proto3" json:"nvarchar_m,omitempty"`
+	NvarcharM string `protobuf:"bytes,12,opt,name=nvarchar_m,json=nvarcharM,proto3" json:"nvarchar_m"` // @gotags: json:"nvarchar_m"
 	//
-	NcharM string `protobuf:"bytes,13,opt,name=nchar_m,json=ncharM,proto3" json:"nchar_m,omitempty"`
+	NcharM string `protobuf:"bytes,13,opt,name=nchar_m,json=ncharM,proto3" json:"nchar_m"` // @gotags: json:"nchar_m"
 	//
-	TimeM string `protobuf:"bytes,14,opt,name=time_m,json=timeM,proto3" json:"time_m,omitempty"`
+	TimeM string `protobuf:"bytes,14,opt,name=time_m,json=timeM,proto3" json:"time_m"` // @gotags: json:"time_m"
 	//
-	DateM string `protobuf:"bytes,15,opt,name=date_m,json=dateM,proto3" json:"date_m,omitempty"`
+	DateM string `protobuf:"bytes,15,opt,name=date_m,json=dateM,proto3" json:"date_m"` // @gotags: json:"date_m"
 	//
-	DataTimeM string `protobuf:"bytes,16,opt,name=data_time_m,json=dataTimeM,proto3" json:"data_time_m,omitempty"`
+	DataTimeM string `protobuf:"bytes,16,opt,name=data_time_m,json=dataTimeM,proto3" json:"data_time_m"` // @gotags: json:"data_time_m"
 	//创建时间
-	TimestampM string `protobuf:"bytes,17,opt,name=timestamp_m,json=timestampM,proto3" json:"timestamp_m,omitempty"`
+	TimestampM string `protobuf:"bytes,17,opt,name=timestamp_m,json=timestampM,proto3" json:"timestamp_m"` // @gotags: json:"timestamp_m"
 	//更新时间
-	TimestampUpdate string `protobuf:"bytes,18,opt,name=timestamp_update,json=timestampUpdate,proto3" json:"timestamp_update,omitempty"`
+	TimestampUpdate string `protobuf:"bytes,18,opt,name=timestamp_update,json=timestampUpdate,proto3" json:"timestamp_update"` // @gotags: json:"timestamp_update"
 	//年
-	YearM string `protobuf:"bytes,19,opt,name=year_m,json=yearM,proto3" json:"year_m,omitempty"`
+	YearM string `protobuf:"bytes,19,opt,name=year_m,json=yearM,proto3" json:"year_m"` // @gotags: json:"year_m"
 	//
-	TText string `protobuf:"bytes,20,opt,name=t_text,json=tText,proto3" json:"t_text,omitempty"`
+	TText string `protobuf:"bytes,20,opt,name=t_text,json=tText,proto3" json:"t_text"` // @gotags: json:"t_text"
 	//
-	MText string `protobuf:"bytes,21,opt,name=m_text,json=mText,proto3" json:"m_text,omitempty"`
+	MText string `protobuf:"bytes,21,opt,name=m_text,json=mText,proto3" json:"m_text"` // @gotags: json:"m_text"
 	//
-	TextM string `protobuf:"bytes,22,opt,name=text_m,json=textM,proto3" json:"text_m,omitempty"`
+	TextM string `protobuf:"bytes,22,opt,name=text_m,json=textM,proto3" json:"text_m"` // @gotags: json:"text_m"
 	//
-	LText string `protobuf:"bytes,23,opt,name=l_text,json=lText,proto3" json:"l_text,omitempty"`
+	LText string `protobuf:"bytes,23,opt,name=l_text,json=lText,proto3" json:"l_text"` // @gotags: json:"l_text"
 	//
-	BinaryM []byte `protobuf:"bytes,24,opt,name=binary_m,json=binaryM,proto3" json:"binary_m,omitempty"`
+	BinaryM []byte `protobuf:"bytes,24,opt,name=binary_m,json=binaryM,proto3" json:"binary_m"` // @gotags: json:"binary_m"
 	//
-	BlobM []byte `protobuf:"bytes,25,opt,name=blob_m,json=blobM,proto3" json:"blob_m,omitempty"`
+	BlobM []byte `protobuf:"bytes,25,opt,name=blob_m,json=blobM,proto3" json:"blob_m"` // @gotags: json:"blob_m"
 	//
-	LBlob []byte `protobuf:"bytes,26,opt,name=l_blob,json=lBlob,proto3" json:"l_blob,omitempty"`
+	LBlob []byte `protobuf:"bytes,26,opt,name=l_blob,json=lBlob,proto3" json:"l_blob"` // @gotags: json:"l_blob"
 	//
-	MBlob []byte `protobuf:"bytes,27,opt,name=m_blob,json=mBlob,proto3" json:"m_blob,omitempty"`
+	MBlob []byte `protobuf:"bytes,27,opt,name=m_blob,json=mBlob,proto3" json:"m_blob"` // @gotags: json:"m_blob"
 	//
-	TBlob []byte `protobuf:"bytes,28,opt,name=t_blob,json=tBlob,proto3" json:"t_blob,omitempty"`
+	TBlob []byte `protobuf:"bytes,28,opt,name=t_blob,json=tBlob,proto3" json:"t_blob"` // @gotags: json:"t_blob"
 	//
-	BitM []byte `protobuf:"bytes,29,opt,name=bit_m,json=bitM,proto3" json:"bit_m,omitempty"`
+	BitM []byte `protobuf:"bytes,29,opt,name=bit_m,json=bitM,proto3" json:"bit_m"` // @gotags: json:"bit_m"
 	//
-	EnumM string `protobuf:"bytes,30,opt,name=enum_m,json=enumM,proto3" json:"enum_m,omitempty"`
+	EnumM string `protobuf:"bytes,30,opt,name=enum_m,json=enumM,proto3" json:"enum_m"` // @gotags: json:"enum_m"
 	//
-	SetM string `protobuf:"bytes,31,opt,name=set_m,json=setM,proto3" json:"set_m,omitempty"`
+	SetM string `protobuf:"bytes,31,opt,name=set_m,json=setM,proto3" json:"set_m"` // @gotags: json:"set_m"
 	//
-	BoolM int64 `protobuf:"varint,32,opt,name=bool_m,json=boolM,proto3" json:"bool_m,omitempty"`
+	BoolM int64 `protobuf:"varint,32,opt,name=bool_m,json=boolM,proto3" json:"bool_m"` // @gotags: json:"bool_m"
 }
 
 func (x *AllTypeTable) Reset() {
@@ -353,7 +353,7 @@ type AllTypeTableId struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" form:"id"` // @gotags: form:"id"
 }
 
 func (x *AllTypeTableId) Reset() {
@@ -456,13 +456,13 @@ type ListAllTypeTablesReq struct {
 	unknownFields protoimpl.UnknownFields
 
 	// number of page
-	Page int64 `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
+	Page int64 `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty" form:"page"` // @gotags: form:"page"
 	// default 20
-	PageSize int64 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	PageSize int64 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty" form:"page_size"` // @gotags: form:"page_size"
 	// order by  for example :  [-id]  -: DESC
-	OrderBy string `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3" json:"order_by,omitempty"`
+	OrderBy string `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3" json:"order_by,omitempty" form:"order_by"` // @gotags: form:"order_by"
 	//  id > ?
-	IdGt int64 `protobuf:"varint,4,opt,name=id_gt,json=idGt,proto3" json:"id_gt,omitempty"`
+	IdGt int64 `protobuf:"varint,4,opt,name=id_gt,json=idGt,proto3" json:"id_gt,omitempty" form:"id_gt"` // @gotags: form:"id_gt"
 }
 
 func (x *ListAllTypeTablesReq) Reset() {
@@ -530,9 +530,9 @@ type ListAllTypeTablesResp struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	AllTypeTables []*AllTypeTable `protobuf:"bytes,1,rep,name=all_type_tables,json=allTypeTables,proto3" json:"all_type_tables,omitempty"`
-	TotalCount    int64           `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
-	PageCount     int64           `protobuf:"varint,3,opt,name=page_count,json=pageCount,proto3" json:"page_count,omitempty"`
+	AllTypeTables []*AllTypeTable `protobuf:"bytes,1,rep,name=all_type_tables,json=allTypeTables,proto3" json:"all_type_tables"` // @gotags: json:"all_type_tables"
+	TotalCount    int64           `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count"`           // @gotags: json:"total_count"
+	PageCount     int64           `protobuf:"varint,3,opt,name=page_count,json=pageCount,proto3" json:"page_count"`              // @gotags: json:"page_count"
 }
 
 func (x *ListAllTypeTablesResp) Reset() {

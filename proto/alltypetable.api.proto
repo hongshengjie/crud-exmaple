@@ -14,73 +14,73 @@ service AllTypeTableService {
 
 message AllTypeTable {
     //自增id
-    int64	id = 1 ;
+    int64	id = 1 ; // @gotags: json:"id"
     //小整型
-    int64	t_int = 2 ;
+    int64	t_int = 2 ; // @gotags: json:"t_int"
     //
-    int64	s_int = 3 ;
+    int64	s_int = 3 ; // @gotags: json:"s_int"
     //中整数
-    int64	m_int = 4 ;
+    int64	m_int = 4 ; // @gotags: json:"m_int"
     //
-    int64	b_int = 5 ;
+    int64	b_int = 5 ; // @gotags: json:"b_int"
     //
-    float	f32 = 6 ;
+    float	f32 = 6 ; // @gotags: json:"f32"
     //
-    double	f64 = 7 ;
+    double	f64 = 7 ; // @gotags: json:"f64"
     //
-    double	decimal_mysql = 8 ;
+    double	decimal_mysql = 8 ; // @gotags: json:"decimal_mysql"
     //
-    string	char_m = 9 ;
+    string	char_m = 9 ; // @gotags: json:"char_m"
     //
-    string	varchar_m = 10 ;
+    string	varchar_m = 10 ; // @gotags: json:"varchar_m"
     //
-    string	json_m = 11 ;
+    string	json_m = 11 ; // @gotags: json:"json_m"
     //
-    string	nvarchar_m = 12 ;
+    string	nvarchar_m = 12 ; // @gotags: json:"nvarchar_m"
     //
-    string	nchar_m = 13 ;
+    string	nchar_m = 13 ; // @gotags: json:"nchar_m"
     //
-    string	time_m = 14 ;
+    string	time_m = 14 ; // @gotags: json:"time_m"
     //
-    string	date_m = 15 ;
+    string	date_m = 15 ; // @gotags: json:"date_m"
     //
-    string	data_time_m = 16 ;
+    string	data_time_m = 16 ; // @gotags: json:"data_time_m"
     //创建时间
-    string	timestamp_m = 17 ;
+    string	timestamp_m = 17 ; // @gotags: json:"timestamp_m"
     //更新时间
-    string	timestamp_update = 18 ;
+    string	timestamp_update = 18 ; // @gotags: json:"timestamp_update"
     //年
-    string	year_m = 19 ;
+    string	year_m = 19 ; // @gotags: json:"year_m"
     //
-    string	t_text = 20 ;
+    string	t_text = 20 ; // @gotags: json:"t_text"
     //
-    string	m_text = 21 ;
+    string	m_text = 21 ; // @gotags: json:"m_text"
     //
-    string	text_m = 22 ;
+    string	text_m = 22 ; // @gotags: json:"text_m"
     //
-    string	l_text = 23 ;
+    string	l_text = 23 ; // @gotags: json:"l_text"
     //
-    bytes	binary_m = 24 ;
+    bytes	binary_m = 24 ; // @gotags: json:"binary_m"
     //
-    bytes	blob_m = 25 ;
+    bytes	blob_m = 25 ; // @gotags: json:"blob_m"
     //
-    bytes	l_blob = 26 ;
+    bytes	l_blob = 26 ; // @gotags: json:"l_blob"
     //
-    bytes	m_blob = 27 ;
+    bytes	m_blob = 27 ; // @gotags: json:"m_blob"
     //
-    bytes	t_blob = 28 ;
+    bytes	t_blob = 28 ; // @gotags: json:"t_blob"
     //
-    bytes	bit_m = 29 ;
+    bytes	bit_m = 29 ; // @gotags: json:"bit_m"
     //
-    string	enum_m = 30 ;
+    string	enum_m = 30 ; // @gotags: json:"enum_m"
     //
-    string	set_m = 31 ;
+    string	set_m = 31 ; // @gotags: json:"set_m"
     //
-    int64	bool_m = 32 ;  
+    int64	bool_m = 32 ; // @gotags: json:"bool_m"  
 }
 
 message AllTypeTableId{
-    int64 id = 1 ;
+    int64 id = 1 ; // @gotags: form:"id"
 }
 
 message UpdateAllTypeTableReq{
@@ -93,13 +93,13 @@ message UpdateAllTypeTableReq{
 
 message ListAllTypeTablesReq{
     // number of page
-    int64 page = 1 ;
+    int64 page = 1 ;// @gotags: form:"page"
     // default 20
-    int64 page_size = 2 ;
+    int64 page_size = 2 ;// @gotags: form:"page_size"
     // order by  for example :  [-id]  -: DESC 
-    string order_by = 3 ; 
+    string order_by = 3 ; // @gotags: form:"order_by"
     //  id > ?
-    int64 id_gt = 4;
+    int64 id_gt = 4; // @gotags: form:"id_gt"
     // filter xxx like %?%
     // string xxx_contains = 5;
     // yyy > ?
@@ -109,9 +109,9 @@ message ListAllTypeTablesReq{
 
 message ListAllTypeTablesResp{
 
-    repeated AllTypeTable all_type_tables = 1 ;
+    repeated AllTypeTable all_type_tables = 1 ; // @gotags: json:"all_type_tables"
 
-    int64 total_count = 2 ;
+    int64 total_count = 2 ; // @gotags: json:"total_count"
     
-    int64 page_count = 3 ;
+    int64 page_count = 3 ; // @gotags: json:"page_count"
 }

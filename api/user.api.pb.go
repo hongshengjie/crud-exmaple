@@ -27,15 +27,15 @@ type User struct {
 	unknownFields protoimpl.UnknownFields
 
 	//id字段
-	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id"` // @gotags: json:"id"
 	//名称
-	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name"` // @gotags: json:"name"
 	//年龄
-	Age int64 `protobuf:"varint,3,opt,name=age,proto3" json:"age,omitempty"`
+	Age int64 `protobuf:"varint,3,opt,name=age,proto3" json:"age"` // @gotags: json:"age"
 	//创建时间
-	Ctime string `protobuf:"bytes,4,opt,name=ctime,proto3" json:"ctime,omitempty"`
+	Ctime string `protobuf:"bytes,4,opt,name=ctime,proto3" json:"ctime"` // @gotags: json:"ctime"
 	//更新时间
-	Mtime string `protobuf:"bytes,5,opt,name=mtime,proto3" json:"mtime,omitempty"`
+	Mtime string `protobuf:"bytes,5,opt,name=mtime,proto3" json:"mtime"` // @gotags: json:"mtime"
 }
 
 func (x *User) Reset() {
@@ -110,7 +110,7 @@ type UserId struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty" form:"id"` // @gotags: form:"id"
 }
 
 func (x *UserId) Reset() {
@@ -213,13 +213,13 @@ type ListUsersReq struct {
 	unknownFields protoimpl.UnknownFields
 
 	// number of page
-	Page int64 `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
+	Page int64 `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty" form:"page"` // @gotags: form:"page"
 	// default 20
-	PageSize int64 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
+	PageSize int64 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty" form:"page_size"` // @gotags: form:"page_size"
 	// order by  for example :  [-id]  -: DESC
-	OrderBy string `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3" json:"order_by,omitempty"`
+	OrderBy string `protobuf:"bytes,3,opt,name=order_by,json=orderBy,proto3" json:"order_by,omitempty" form:"order_by"` // @gotags: form:"order_by"
 	//  id > ?
-	IdGt int64 `protobuf:"varint,4,opt,name=id_gt,json=idGt,proto3" json:"id_gt,omitempty"`
+	IdGt int64 `protobuf:"varint,4,opt,name=id_gt,json=idGt,proto3" json:"id_gt,omitempty" form:"id_gt"` // @gotags: form:"id_gt"
 }
 
 func (x *ListUsersReq) Reset() {
@@ -287,9 +287,9 @@ type ListUsersResp struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Users      []*User `protobuf:"bytes,1,rep,name=users,proto3" json:"users,omitempty"`
-	TotalCount int64   `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count,omitempty"`
-	PageCount  int64   `protobuf:"varint,3,opt,name=page_count,json=pageCount,proto3" json:"page_count,omitempty"`
+	Users      []*User `protobuf:"bytes,1,rep,name=users,proto3" json:"users"`                              // @gotags: json:"users"
+	TotalCount int64   `protobuf:"varint,2,opt,name=total_count,json=totalCount,proto3" json:"total_count"` // @gotags: json:"total_count"
+	PageCount  int64   `protobuf:"varint,3,opt,name=page_count,json=pageCount,proto3" json:"page_count"`    // @gotags: json:"page_count"
 }
 
 func (x *ListUsersResp) Reset() {
