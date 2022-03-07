@@ -28,7 +28,7 @@ const dsn = "root:123456@tcp(127.0.0.1:3306)/test?parseTime=true"
 
 func main() {
 	db, _ = sql.Open("mysql", dsn)
-	fmt.Println(FindUserReflect())
+	fmt.Println(FindUser())
 }
 
 func FindUser() ([]*User, error) {
@@ -51,26 +51,67 @@ func FindUser() ([]*User, error) {
 	return result, nil
 }
 
-func FindUserReflect() ([]*User, error) {
-	b := SelectBuilder{builder: &strings.Builder{}}
-	sql, args := b.
-		Select("id", "name", "age", "ctime", "mtime").
-		From("user").
-		Where(GT("id", 0), GT("age", 0)).
-		OrderBy("id").
-		Limit(0, 20).
-		Query()
-	fmt.Println(sql, args)
+const (
+	// table tableName is user
+	table = "user"
+	//Id id字段
+	Id = "id"
+	//Name 名称
+	Name = "name"
+	//Age 年龄
+	Age = "age"
+	//Ctime 创建时间
+	Ctime = "ctime"
+	//Mtime 更新时间
+	Mtime = "mtime"
+)
+
+var Columns = []string{
+	Id,
+	Name,
+	Age,
+	Ctime,
+	Mtime,
+}
+
+func FindUserNoReflect(b *SelectBuilder) ([]*User, error) {
+	sql, args := b.Query()
 	rows, err := db.QueryContext(ctx, sql, args...)
 	if err != nil {
 		return nil, err
 	}
 	result := []*User{}
+	if DeepEqual(b.column, Columns) {
+		defer rows.Close()
+		for rows.Next() {
+			a := &User{}
+			if err := rows.Scan(&a.Id, &a.Name, &a.Age, &a.Ctime, &a.Mtime); err != nil {
+				return nil, err
+			}
+			result = append(result, a)
+		}
+		if rows.Err() != nil {
+			return nil, rows.Err()
+		}
+		return result, nil
+	}
 	err = ScanSlice(rows, &result)
 	if err != nil {
 		return nil, err
 	}
 	return result, nil
+}
+
+func DeepEqual(a, b []string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i := 0; i < len(a); i++ {
+		if a[i] != b[i] {
+			return false
+		}
+	}
+	return true
 }
 
 type SelectBuilder struct {
