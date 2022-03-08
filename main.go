@@ -2,10 +2,6 @@ package main
 
 import (
 	"context"
-	"github.com/hongshengjie/crud-example/api"
-	"github.com/hongshengjie/crud-example/crud"
-	"github.com/hongshengjie/crud-example/discovery"
-	"github.com/hongshengjie/crud-example/service"
 	"flag"
 	"fmt"
 	"net"
@@ -14,6 +10,11 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+
+	"github.com/hongshengjie/crud-example/api"
+	"github.com/hongshengjie/crud-example/crud"
+	"github.com/hongshengjie/crud-example/discovery"
+	"github.com/hongshengjie/crud-example/service"
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
@@ -66,11 +67,11 @@ func main() {
 	m := cmux.New(l)
 
 	e := gin.Default()
-	api.RegisterUserServiceGin(e, u, nil)
-	api.RegisterAllTypeTableServiceGin(e, al, nil)
+	api.RegisterUserServiceHTTP(e, u, nil)
+	api.RegisterAllTypeTableServiceHTTP(e, al, nil)
 	// Match connections in order:
 	// First grpc, then HTTP, and otherwise Go RPC/TCP.
-	grpcL := m.Match(cmux.HTTP2HeaderField("content-type", "application/grpc"))
+	grpcL := m.MatchWithWriters(cmux.HTTP2MatchHeaderFieldPrefixSendSettings("content-type", "application/grpc"))
 	httpL := m.Match(cmux.HTTP1Fast())
 	hsvr := &http.Server{
 		Handler: e,
@@ -78,7 +79,7 @@ func main() {
 	go func() {
 		go svr.Serve(grpcL)
 		go hsvr.Serve(httpL)
-		go m.Serve()
+		m.Serve()
 	}()
 
 	instanceID := appID + "/" + uuid.New().String()

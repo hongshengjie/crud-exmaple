@@ -89,7 +89,7 @@ func main() {
 	api.RegisterAllTypeTableServiceGin(e, al, nil)
 	// Match connections in order:
 	// First grpc, then HTTP, and otherwise Go RPC/TCP.
-	grpcL := m.Match(cmux.HTTP2HeaderField("content-type", "application/grpc"))
+	grpcL := m.MatchWithWriters(cmux.HTTP2MatchHeaderFieldPrefixSendSettings("content-type", "application/grpc"))
 	httpL := m.Match(cmux.HTTP1Fast())
 	hsvr := &http.Server{
 		Handler: e,
