@@ -3,13 +3,15 @@ package service
 import (
 	"context"
 	"errors"
+	"fmt"
+	"math"
+	"strings"
+	"time"
+
 	"github.com/hongshengjie/crud-example/api"
 	"github.com/hongshengjie/crud-example/crud"
 	"github.com/hongshengjie/crud-example/crud/user"
 	"google.golang.org/protobuf/types/known/emptypb"
-	"math"
-	"strings"
-	"time"
 )
 
 // UserServiceImpl UserServiceImpl
@@ -117,6 +119,7 @@ func (s *UserServiceImpl) UpdateUser(ctx context.Context, req *api.UpdateUserReq
 
 // GetUser GetUser
 func (s *UserServiceImpl) GetUser(ctx context.Context, req *api.UserId) (*api.User, error) {
+	fmt.Println(1)
 	a, err := s.Client.User.
 		Find().
 		Where(

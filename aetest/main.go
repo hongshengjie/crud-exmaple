@@ -47,7 +47,7 @@ func InitDB2() {
 	})
 }
 
-func Usergithub.com/hongshengjie/crud-example() {
+func User() {
 
 	u := &user.User{
 		Id:    0,

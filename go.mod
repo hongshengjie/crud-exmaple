@@ -3,6 +3,7 @@ module github.com/hongshengjie/crud-example
 go 1.17
 
 require (
+	github.com/envoyproxy/go-control-plane v0.10.1
 	github.com/gin-gonic/gin v1.7.7
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/google/uuid v1.1.2
@@ -14,8 +15,11 @@ require (
 )
 
 require (
+	github.com/census-instrumentation/opencensus-proto v0.2.1 // indirect
+	github.com/cncf/xds/go v0.0.0-20211011173535-cb28da3451f1 // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
+	github.com/envoyproxy/protoc-gen-validate v0.1.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.13.0 // indirect
 	github.com/go-playground/universal-translator v0.17.0 // indirect

@@ -30,7 +30,7 @@ var port int
 var dsn string
 
 const (
-	appID = "github.com/hongshengjie/crud-example.user"
+	appID = "crud-example.user"
 )
 
 func init() {
